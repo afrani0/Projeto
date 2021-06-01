@@ -1,0 +1,130 @@
+/*
+.pages-arquivos-body{
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 30px;
+    margin: 32px auto;
+}*/
+span{
+    color: black;
+}
+
+.pages-arquivos-imagem{
+    box-shadow:0 0 20px cornflowerblue;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.pages-arquivos-nome{
+   font-family: Verdana, Geneva, Tahoma, sans-serif; 
+   margin-bottom: 10px;
+   color: #47444499;
+   text-shadow: 1px 1px 1px #0c0c0c,  0 0 10px cornflowerblue;
+}
+
+.pages-arquivos-body{
+    margin: 20px 15%  0 15%;
+    font-size: 13px; 
+ }
+
+ .pages-arquivos-descricao{
+    
+    margin-bottom: 15px;
+    padding: 15px 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.pages-arquivos-item{
+    border: #3169d122 solid 5px;
+    margin-bottom: 15px;
+    padding: 15px 25px;
+    border-radius: 10px;  
+}
+
+.pages-arquivos-item:hover{
+    border: #3169d1a1 solid 5px;
+}
+
+.pages-arquivos-detalhes{
+    margin-top: 15px;
+    color:cornflowerblue;
+}
+
+.pages-arquivos-detalhes div{
+    margin-bottom: 5px;
+}
+
+.pages-arquivos-tamanho{
+    margin-right: 10px;
+}
+
+.pages-arquivos-formato{
+    margin-left: 10px;
+}
+
+.pages-arquivos-buttonnew{
+    margin-left: auto;/*quando a div esta dentro de uma div pai que é flex, então se usa 'margin-left:alto', porque 'float:left' não se aplica a div flex*/
+}
+
+
+.pages-arquivos-buttonnew button{
+    color : #3169d1;
+    border-radius: 6px;
+    border: rgba(0, 26, 255, 0.411) 1px solid;
+    /*margin-left: 20px;*/
+    padding: 2px 25px;
+    /*margin-top: -40px;*/
+    
+    
+}
+
+.pages-arquivos-buttonnew button:hover{
+    color : #fff;
+    background-color: #3169d1;
+}
+
+.pages-arquivos-button button{
+    color : #3169d1;
+    border-radius: 6px;
+    border: rgba(0, 26, 255, 0.411) 1px solid;
+    margin-left: 20px;
+    padding: 2px 25px;
+    margin-top: -20px;
+    width: 100px;
+    float: right;
+}
+
+.pages-arquivos-button button:hover{
+    color : #fff;
+    background-color: #3169d1;
+}
+
+.pages-arquivos-pesquisa{
+    color: #3169d1;
+    /*padding-bottom: 10px;*/
+}
+
+.pages-arquivos-pesquisa input{
+    color: #3169d1;
+    border-radius: 6px;
+    /*margin-left: 5px;*/
+    width: 100%;
+    border: #3169d1 1px solid; 
+}
+
+
+.pages-arquivos-barrainicial{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 900px)
+{
+    .pages-arquivos-button button{
+        
+        float: none;
+        margin-top: 15px;
+    }
+}

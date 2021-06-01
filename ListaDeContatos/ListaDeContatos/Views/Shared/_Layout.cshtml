@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ListaDeContatos</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+
+    <style>
+        .ly_nav {
+            background-color: #2f80ed;
+        }
+
+        .ly_menu {
+            color: #F2F2F2 !important;
+        }
+
+        .ly_menu:hover {
+            
+            font-weight: 600;
+        }
+
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top ly_nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    
+                    <li><a asp-area="" class="ly_menu" asp-controller="Registro" asp-action="ListaUsuarios">Registro</a></li>                    
+                    <li><a asp-area="" class="ly_menu" asp-controller="AssociarUsuario" asp-action="ListarAssociarUsuario">Associar Usuário</a></li>
+                    <li><a asp-area="" class="ly_menu" asp-controller="Contato" asp-action="ListarContatos">Contatos</a></li>
+                    <li><a asp-area="" class="ly_menu" asp-controller="Senha" asp-action="EditarSenha">Senhas</a></li>
+                    
+                </ul>
+                <partial name="_LoginPartial" />
+            </div>
+        </div>
+    </nav>
+
+    <partial name="_CookieConsentPartial" />
+
+    <div class="container body-content">
+
+        @if (!string.IsNullOrEmpty(@ViewBag.Sucesso))
+        {
+            <div class="alert alert-success alert-dismissible navbar-right alerta">
+                <button class="close" data-dismiss="alert">X</button>
+                <span>
+                    @ViewBag.Sucesso
+                </span>
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(@ViewBag.Aviso))
+        {
+            <div class="alert alert-warning alert-dismissible navbar-right alerta">
+                <button class="close" data-dismiss="alert">X</button>
+                <span>
+                    @ViewBag.Aviso
+                </span>
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(@ViewBag.Erro))
+        {
+            <div class="alert alert-danger alert-dismissible navbar-right alerta">
+                <button class="close" data-dismiss="alert">X</button>
+                <span>
+                    @ViewBag.Erro
+                </span>
+            </div>
+        }
+
+
+        <img src="~/images/tela02.JPG" style="max-height:100px; max-height:80px" />
+        @RenderBody()
+        <hr />
+        <footer style="background-color:#2F80ED;" class="navbar navbar-fixed-bottom ly_menu">
+            <h3> &#9733; 2020 - Programa Teste</h3>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery-mask/jquery.mask.min.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

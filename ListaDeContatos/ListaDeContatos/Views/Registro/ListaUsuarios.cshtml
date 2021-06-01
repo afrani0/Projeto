@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ListaDeContatos.ViewModels.UsuarioEditarViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Usuários";
+}
+<div>   
+    <div class="modal fade">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header alert-info">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Atenção!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>O usuário será excluído permanentemente junto com sua permissão. Deseja mesmo excluir?</p>
+                </div>
+                <div class="modal-footer">
+                    <form id="idFormDelete" action="/registro/DeletarUsuario" method="post">
+                        
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" id="id" name="id" value="" />
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <h2>Lista de Usuários</h2>
+
+
+
+    <p>
+        <a class="btn btn-info" asp-action="CriarUsuario">Novo Usuário</a>
+    </p>
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SobreNome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomeUsuario)
+                </th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SobreNome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomeUsuario)
+                    </td>
+                   
+                    <td>
+                        <a class="btn panel-info" title="Editar" asp-action="EditarUsuario" asp-route-id="@item.Id"><i class="glyphicon glyphicon-pencil"></i></a> |
+                        <a class="btn alert-info" title="Detalhes" asp-action="VisualizarUsuario" asp-route-id="@item.Id"><i class="glyphicon glyphicon-search"></i></a> |
+                        <a class="btn btn-info excluir" title="Excluir" data-id="@item.Id"><i class="glyphicon glyphicon-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $(function () {
+                $(".excluir").click(function () {
+                    var id = $(this).attr("data-id");
+                    
+                    $("#idFormDelete input#id").val(id)
+                    $(".modal").modal();
+
+                });
+            })
+
+            var interval;
+            function fecharAlertas() {
+
+                $(".alerta").slideToggle(1000);
+                clearInterval(interval);
+            }
+
+            var interval = setInterval(fecharAlertas, 20000);
+        });
+    </script>
+}

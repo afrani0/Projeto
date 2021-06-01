@@ -1,0 +1,5 @@
+*.jfm
+AgendaDeClientes/DesignTimeBuild/.dtbcache
+AgendaDeClientes/.vs/AgendaDeClientes/v15/*
+AgendaDeClientes/AgendaDeClientesTeste/obj/*
+AgendaDeClientes/NUnitTestAgendaDeCliente/obj/*

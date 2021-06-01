@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Acesso Negado";
+}
+
+<h1>Acesso Negado!</h1>
+
+<h2>Você não tem autorização para acessar esta página ou executar uma de suas funcionalidades!</h2>
+
+<h3>Atenção: Caso você clicar em 'Voltar a Página Inicial' e continuar mostrando essa tela de acesso Negado, então deve entrar em contato com o Administrador e solicitar a associação de um <strong>nível acesso/ perfil</strong> ao seu <strong>usuário</strong>.</h3>
+
+@Html.ActionLink("Voltar a Página Inicial", "ListarContatos", "Contato",null, new { @class = "btn btn-info" })
+<br />

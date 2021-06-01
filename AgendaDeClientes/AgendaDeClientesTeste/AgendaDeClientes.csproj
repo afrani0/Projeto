@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DocumentationFile>D:\Versoes WebForm\Versoes Conectadas com o GIT\Projeto - Angeda Cliente Back-end\AgendaDeClientes\AgendaDeClientesTeste\AgendaDeClientes.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200312200539_inicioBanco.cs" />
+    <Compile Remove="Migrations\20200316214640_teste160320.cs" />
+    <Compile Remove="Migrations\20200316225211_cliente16032020_0.cs" />
+    <Compile Remove="Migrations\20200317035940_cliente16032020_1.cs" />
+    <Compile Remove="Migrations\20200317040452_cliente16032020_2.cs" />
+    <Compile Remove="Migrations\20200317041732_cliente16032020_1.cs" />
+    <Compile Remove="Migrations\20200317221718_inicio17032020_0.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.0.0" />
+    <PackageReference Include="System.IO" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>

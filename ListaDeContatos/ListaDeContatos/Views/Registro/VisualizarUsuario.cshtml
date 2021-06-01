@@ -1,0 +1,43 @@
+﻿@model ListaDeContatos.ViewModels.UsuarioViewModel
+
+@{
+    ViewData["Title"] = "Detalhes do Usuário";
+}
+
+<h2>Detalhes do Usuário</h2>
+
+<div>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SobreNome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SobreNome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeUsuario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeUsuario)
+        </dd>      
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        
+        
+    </dl>
+</div>
+<div>
+    <a class="btn btn-info" asp-action="EditarUsuario" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="ListaUsuarios">Voltar</a>
+</div>

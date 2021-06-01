@@ -1,0 +1,41 @@
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.deps.json
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.runtimeconfig.json
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.runtimeconfig.dev.json
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.dll
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.pdb
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.csproj.CoreCompileInputs.cache
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.RazorAssemblyInfo.cache
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.RazorAssemblyInfo.cs
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.AssemblyInfoInputs.cache
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.AssemblyInfo.cs
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.RazorTargetAssemblyInfo.cache
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.dll
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Locais\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.pdb
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.deps.json
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.runtimeconfig.json
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.runtimeconfig.dev.json
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.dll
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.pdb
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.csprojAssemblyReference.cache
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.csproj.CoreCompileInputs.cache
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.RazorAssemblyInfo.cache
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.RazorAssemblyInfo.cs
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.AssemblyInfoInputs.cache
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.AssemblyInfo.cs
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.RazorTargetAssemblyInfo.cache
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.dll
+D:\Versoes_WebForm\VERSOES - React\REACT\Projeto_Arquivos_Remotos\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.pdb
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.deps.json
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.runtimeconfig.json
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.runtimeconfig.dev.json
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.dll
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\bin\Debug\netcoreapp2.1\React_Arquivos_Backend.pdb
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.csprojAssemblyReference.cache
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.csproj.CoreCompileInputs.cache
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.RazorAssemblyInfo.cache
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.RazorAssemblyInfo.cs
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.AssemblyInfoInputs.cache
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.AssemblyInfo.cs
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.RazorTargetAssemblyInfo.cache
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.dll
+D:\Versoes\GIT\REPOSITORIO PUBLICO\Portifolio\Portifolio\React_Arquivos_Backend\React_Arquivos_Backend\obj\Debug\netcoreapp2.1\React_Arquivos_Backend.pdb

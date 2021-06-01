@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AgendaDeClientes</name>
+    </assembly>
+    <members>
+        <member name="M:AgendaDeClientes.Controllers.ClienteController.PesquisarClientes(System.String)">
+            <summary>
+            Pesquisa uma lista de Cliente(s) com seu respectivo Endereço, conforme valor do parâmetro 'nome'.
+            </summary> O
+        </member>
+        <member name="M:AgendaDeClientes.Controllers.ClienteController.PesquisarCliente(System.Int32)">
+            <summary>
+            Pesquisa um Cliente com seu respectivo Endereço, conforme valor do parâmetro 'id'.
+            </summary>
+        </member>
+        <member name="M:AgendaDeClientes.Controllers.ClienteController.InativarCliente(System.Int32)">
+            <summary>
+            Inativar Cliente já ativo, conforme valor do parâmetro 'id'.
+            </summary>        
+        </member>
+        <member name="M:AgendaDeClientes.Controllers.ClienteController.AnativarCliente(System.Int32)">
+            <summary>
+            Ativar Cliente inativo, que não tenha um telefone igual de outro cliente já ativo, , conforme valor do parâmetro 'id'.
+            </summary>        
+        </member>
+        <member name="M:AgendaDeClientes.Controllers.ClienteController.AdicionarCliente(AgendaDeClientes.ViewModel.Cliente.AdicionarClienteViewModel)">
+            <summary>
+            Salvar novo Cliente com seu Endereço, conforme valor do objeto Cliente.
+            </summary>        
+        </member>
+        <member name="M:AgendaDeClientes.Controllers.ClienteController.EditarCliente(System.Int32,AgendaDeClientes.ViewModel.Cliente.EditarClienteViewModel)">
+            <summary>
+            Editar Cliente existente com seu Endereço, conforme valor do parâmetro 'id'.
+            </summary>        
+        </member>
+    </members>
+</doc>

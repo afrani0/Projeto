@@ -1,0 +1,25 @@
+Criado programa back-end API com Aps.net core
+
+--- Tela para controle de imagens ---
+
+-tela de imagens, listagem de imagens conforme o parâmetro nome.
+-tela de criação de imagem, cria imagem em conjunto com seus dados.
+-tela de edição da imagem, edita imagem em conjunto com seus dados. 
+
+
+O que o programa usa/tem:
+
+- Entity Framework.
+- Asp.Net core 2.1.
+- MySQL.
+- API propria (disposição dos dados).
+
+O que não usa/tem:
+
+- Consumo Api de terceiros
+- Criptografia
+- AutoMapper
+- Nunit e Mock.
+- Token
+
+

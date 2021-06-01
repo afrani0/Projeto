@@ -1,0 +1,87 @@
+﻿@model ListaDeContatos.ViewModels.UsuarioViewModel
+
+@{
+    ViewData["Title"] = "Criando Usuário";
+}
+
+<h2>Criando Usuário</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CriarUsuario">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SobreNome" class="control-label"></label>
+                <input asp-for="SobreNome" class="form-control" />
+                <span asp-validation-for="SobreNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeUsuario" class="control-label"></label>
+                <input asp-for="NomeUsuario" class="form-control" />
+                <span asp-validation-for="NomeUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Senha" class="control-label"></label>
+                <input asp-for="Senha" class="form-control" />
+                <span asp-validation-for="Senha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+                <a asp-action="ListaUsuarios">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $("#Nome").keyup(function () {
+
+                if ($("#Nome").val().length > 30)
+                    $("#Nome").val($("#Nome").val().substring(0, 30));
+            });
+
+            $("#SobreNome").keyup(function () {
+
+                if ($("#SobreNome").val().length > 100)
+                    $("#SobreNome").val($("#SobreNome").val().substring(0, 100));
+            });
+
+            $("#NomeUsuario").keyup(function () {
+
+                if ($("#NomeUsuario").val().length > 256)
+                    $("#NomeUsuario").val($("#NomeUsuario").val().substring(0, 256));
+            });
+
+            $("#Email").keyup(function () {
+
+                if ($("#Email").val().length > 256)
+                    $("#Email").val($("#Email").val().substring(0, 256));
+            });
+
+            $("#Senha").keyup(function () {
+
+                if ($("#Senha").val().length > 20)
+                    $("#Senha").val($("#Senha").val().substring(0, 20));
+            });
+            
+
+        });
+        
+    </script>
+}
+

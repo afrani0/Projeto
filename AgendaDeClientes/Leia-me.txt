@@ -1,0 +1,19 @@
+Criado programa Back-End de api Aps.net core simples.
+
+- A idéia é apresentar uma lógica simples de uma APi que trabalha com valores
+de um cliente que tem um unico endereço que não pode ser igual para outros clientes.
+
+O que o programa usa/tem:
+
+- Entity Framework.
+- Asp.Net core 2.1 - API.
+- Nunit e Mock.
+- Exception personalizadas.
+- SqlServer 2008 R2.
+
+O que não usa/tem:
+
+- AutoMapper
+- Token
+- Criptografia
+- Front-End

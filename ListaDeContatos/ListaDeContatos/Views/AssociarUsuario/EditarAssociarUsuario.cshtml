@@ -1,0 +1,41 @@
+﻿@model ListaDeContatos.ViewModels.UsuarioNivelAcessoViewModel
+
+@{
+    ViewData["Title"] = "Editando Associação do Usuário";
+}
+
+<h4>Editando Associação do Usuário</h4>
+<hr />
+
+<form asp-action="EditarAssociarUsuario">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row">
+
+        <div class="col-md-2 form-group">
+            <label asp-for="NomeUsuario" class="control-label"></label><br />
+            <input asp-for="NomeUsuario" readonly/>
+
+        </div>
+        <div class="col-md-3 form-group">
+
+            <label asp-for="RoleId" class="control-label"></label>
+            @Html.DropDownList("RoleId",
+                new SelectList(@ViewBag.NivelAcesso.Items, "Id", "Name", Model.RoleId),
+                "- Escolha o Nível de Acesso -",
+                new { @class = "form-control" })
+            <span asp-validation-for="RoleId" class="text-danger"></span>
+
+        </div>
+        <input type="hidden" asp-for="UserId" />
+        <div class="col-md-7 form-group">
+            <br />
+            <input type="submit" value="Salvar" class="btn btn-info" />
+            <a class="btn btn-default" asp-action="ListarAssociarUsuario">Voltar</a>
+        </div>
+    </div>
+</form>
+
+
+
+

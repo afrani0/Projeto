@@ -1,0 +1,9 @@
+.componente-titulo{
+    color: rgba(222, 223, 231, 0.966);
+    font-size: 30px;
+    display: block;
+    background: rgba(0, 26, 255, 0.637);
+    border-radius: 6px;
+    margin-bottom: 25px;
+    padding:4px;
+}

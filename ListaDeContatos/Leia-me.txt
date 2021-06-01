@@ -1,0 +1,33 @@
+Criado programa monolitico com Aps.net core
+
+
+---Telas de autenticação e controle (somente administrador tem acesso) ---
+
+-tela de login
+-tela de login que redireciona para pagina de troca de senha caso seja o primeiro acesso.
+-tela Registro, que lista, cadastra, edita e exclui usuários do sistema.
+-tela para listar, excluir ou associar um nível de acesso para os usuários cadastrados
+-tela para mudar criar uma nova senha para qualquer usuário(desde que o usuário logado seja do nível de acesso administrador)
+
+--- Tela para controle dos contatos ---
+
+-tela para controlar contatos:
+ (nível acesso básico, só pode acessar listagem e visualizar detalhes)
+ (nível acesso completo), pode listar, ver detalhe, criar, editar e excluir contato.
+
+
+O que o programa usa/tem:
+
+- Identity
+- Entity Framework.
+- Asp.Net core 2.1.
+- AutoMapper
+- Nunit e Mock.
+- SqlServer 2008 R2.
+- Token
+- Consumo Api de terceiros
+
+O que não usa/tem:
+
+- API propria (disposição/ consumo).
+- Criptografia

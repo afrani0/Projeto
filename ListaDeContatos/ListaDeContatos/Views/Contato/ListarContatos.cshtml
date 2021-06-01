@@ -1,0 +1,163 @@
+﻿@model IEnumerable<ListaDeContatos.Models.Contato>
+
+@{
+    ViewData["Title"] = "Lista de Contatos";
+}
+<div>
+    <div class="modal fade">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header alert-info">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Atenção!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>O Contato será excluído permanentemente. Deseja mesmo excluir?</p>
+                </div>
+                <div class="modal-footer">
+                    <form id="idFormDelete" action="/contato/DeletarContato" method="post">
+                        
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" id="id" name="id" value="" />
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <h2>Lista de Contatos</h2>
+
+    <p>
+        <a class="btn btn-info" asp-action="CriarContato">Novo Contato</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TelefoneRecado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataNascimento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sexo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cidade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cep)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @{ var telefone = (@item.Telefone.Length > 10) ?
+                            "(" + @item.Telefone.Substring(0, 2) + ") " + @item.Telefone.Substring(2, 5) + "-" + @item.Telefone.Substring(7, 4) :
+                            "(" + @item.Telefone.Substring(0, 2) + ") " + @item.Telefone.Substring(2, 4) + "-" + @item.Telefone.Substring(6, 4);}
+
+                        <label style="width:120px;font-weight: normal;">@telefone</label>
+                    </td>
+                    <td>
+                        @{ var telefoneRecado = "";}
+
+                        @if (@item.TelefoneRecado != null)
+                        {
+                            telefoneRecado = (@item.TelefoneRecado.Length > 10) ?
+                                "(" + @item.TelefoneRecado.Substring(0, 2) + ") " + @item.TelefoneRecado.Substring(2, 5) + "-" + @item.TelefoneRecado.Substring(7, 4) :
+                                "(" + @item.TelefoneRecado.Substring(0, 2) + ") " + @item.TelefoneRecado.Substring(2, 4) + "-" + @item.TelefoneRecado.Substring(6, 4);
+                        }
+
+                        <label style="width:120px;font-weight: normal;">@telefoneRecado</label>
+                    </td>
+                    <td>
+                        <label style="width:120px;font-weight: normal;">@Convert.ToString(string.Format("{0:dd/MM/yyyy}", @item.DataNascimento)) </label>
+                    </td>
+                    <td>
+                        @if (@item.Sexo != true)
+                        {
+                            <label>F</label>
+                        }
+                        else
+                        {
+                            <label>M</label>
+                        }
+                    </td>
+                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cidade)
+                    </td>
+                   
+                    <td>
+                        <label class="CEP" style="font-weight: normal;">
+                            @Html.DisplayFor(modelItem => item.Cep)
+                        </label>
+                    </td>
+                    
+                    <td>
+                        <a class="btn panel-info" title="Editar" asp-action="EditarContato" asp-route-id="@item.ContatoId"><i class="glyphicon glyphicon-pencil"></i></a> |
+                        <a class="btn alert-info" title="Detalhes" asp-action="VisualizarContato" asp-route-id="@item.ContatoId"><i class="glyphicon glyphicon-search"></i></a> |
+                        <a class="btn btn-info excluir" title="Excluir" data-id="@item.ContatoId" ><i class="glyphicon glyphicon-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section scripts{
+
+    <script>
+
+        $(document).ready(function () {
+
+            var total = $(".CEP").length;
+
+            for (var i = 0; i < total; i++) {
+                var cep = $(".CEP")[i].innerHTML;
+                cep = cep.trim();
+                var mascara = cep.substring(0, 2) + "." + cep.substring(2, 5) + "." + cep.substring(5, 8);
+                if (cep != "")
+                    $(".CEP")[i].innerHTML = mascara;
+            }
+
+            $(function () {
+                $(".excluir").click(function () {
+                    var id = $(this).attr("data-id");
+                    
+                    $("#idFormDelete input#id").val(id)
+                    $(".modal").modal();
+
+                });
+            })
+
+            var interval;
+            function fecharAlertas() {
+
+                $(".alerta").slideToggle(1000);
+                clearInterval(interval);
+            }
+            var interval = setInterval(fecharAlertas, 20000);
+        });
+    </script>
+
+}

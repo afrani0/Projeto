@@ -1,0 +1,127 @@
+﻿@model ListaDeContatos.ViewModels.ContatoViewModel
+
+@{
+    ViewData["Title"] = "Detalhes do Contato";
+}
+
+<h2>Detalhes do Contato</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd>
+            <label id="telefone">@Html.DisplayFor(model => model.Telefone)</label>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefoneRecado)
+        </dt>
+        <dd>
+            <label id="telefoneRecado">@Html.DisplayFor(model => model.TelefoneRecado)</label>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RG)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RG)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CEP)
+        </dt>
+        <dd>
+            <labe class="CEP"> @Html.DisplayFor(model => model.CEP)</labe>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Rua)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rua)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditarContato" class="btn btn-default" asp-route-id="@Model.ContatoId">Editar</a> |
+    <a asp-action="ListarContatos">Voltar</a>
+</div>
+
+@section scripts{
+
+    <script>
+
+        $(document).ready(function () {
+            // Máscaras dos campos
+
+            var total = $(".CEP").length;
+
+            for (var i = 0; i < total; i++) {
+                var cep = $(".CEP")[i].innerHTML;
+                cep = cep.trim();
+                var mascara = cep.substring(0, 2) + "." + cep.substring(2, 5) + "." + cep.substring(5, 8);
+                if (cep != "")
+                    $(".CEP")[i].innerHTML = mascara;
+            }
+
+            ($("select option:selected").val() == "true") ? $("select option:selected").text("Masculino") : $("select option:selected").text("Feminino");
+            var telefoneMask = $("#telefone").text();
+            var telefoneRecadoMask = $("#telefoneRecado").text();
+
+            $("#telefone").text("(" + telefoneMask.substring(0, 2) + ") " + telefoneMask.substring(2, 7) + "-" + telefoneMask.substring(7, 11));
+            if (telefoneRecadoMask != "" && telefoneRecadoMask != null)
+                $("#telefoneRecado").text("(" + telefoneRecadoMask.substring(0, 2) + ") " + telefoneRecadoMask.substring(2, 6) + "-" + telefoneRecadoMask.substring(6, 10));
+        });
+
+
+
+    </script>
+}

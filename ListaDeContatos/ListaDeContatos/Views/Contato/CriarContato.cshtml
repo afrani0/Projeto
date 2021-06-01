@@ -1,0 +1,348 @@
+﻿@model ListaDeContatos.ViewModels.ContatoViewModel
+
+@{
+    ViewData["Title"] = "Criando Novo Contato";
+}
+
+<style>
+
+    /* Botão Switch */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 22px;
+    }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 3.2px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #a09e9b;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 40px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+</style>
+
+
+<h2>Criando Novo Contato</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CriarContato">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label" title="O nome é obrigatório"></label>
+                <input asp-for="Nome" class="form-control" placeholder="Digite o nome completo do contato" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefoneRecado" class="control-label"></label>
+                <input asp-for="TelefoneRecado" class="form-control" />
+                <span asp-validation-for="TelefoneRecado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataNascimento" class="control-label"></label>
+                <input asp-for="DataNascimento" class="form-control" />
+                <span asp-validation-for="DataNascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <label asp-for="Sexo" class="control-label"></label>
+
+                <br />
+                @Html.RadioButtonFor(model => model.Sexo, true)<span> Masculino</span>
+                @Html.RadioButtonFor(model => model.Sexo, false)<span> Feminino</span>
+                <span asp-validation-for="Sexo" class="text-danger"></span>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="RG" class="control-label"></label>
+                <input asp-for="RG" class="form-control" />
+                <span asp-validation-for="RG" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+
+                @Html.DropDownList("Estado",
+                    new SelectList(@ViewBag.Estado, "Sigla", "Nome"),
+                    "- Escolha o Estado -",
+                    new { @class = "form-control" })
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cidade" class="control-label"></label>
+                @Html.DropDownList("Cidade",
+                    new SelectList(@ViewBag.Cidade, "Nome", "Nome"),
+                    "- Escolha a Cidade -",
+                    new { @class = "form-control" , @disabled = "disabled" })
+                <span asp-validation-for="Cidade" class="text-danger"></span>
+            </div>
+
+            @* Area de CEP, Bairro, Rua *@
+            <div style="border: solid 1px silver; padding: 11px; border-radius: 5px;">
+                <div class="font-weight: bold;">Deseja inserir CEP? </div>
+                <label>Não</label>
+                <label class="switch">
+                    <input type="checkbox" id="EscolhaCEP" checked>
+                    <span class="slider round"></span>
+                </label>
+                <label>Sim</label>
+
+
+                <div class="form-group" id="divCEP">
+                    <label asp-for="CEP" class="control-label"></label>
+                    <input asp-for="CEP" class="form-control" />
+                    <span asp-validation-for="CEP" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Bairro" class="control-label"></label>
+                    <input asp-for="Bairro" class="form-control" disabled />
+                    <span asp-validation-for="Bairro" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Rua" class="control-label"></label>
+                    <input asp-for="Rua" class="form-control" disabled />
+                    <span asp-validation-for="Rua" class="text-danger"></span>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Numero" class="control-label"></label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Complemento" class="control-label"></label>
+             
+                <select asp-for="Complemento" asp-items="@Html.GetEnumSelectList<ListaDeContatos.Enumerador.Moradia>()" class="form-control">
+                    <option value="">- Escolha a Moradia -</option>
+                </select>
+                <span asp-validation-for="Complemento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-info" />
+                <a asp-action="ListarContatos">Voltar</a>
+            </div>
+        </form>
+        <hr />
+        <span>(*) campo(s) obrigatório(s)</span>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            
+            //configura conforme escolha se vai ou não digitar dados de CEP
+            function configuraEscolhaCEP() {
+                var escolha = $("#EscolhaCEP").is(":checked");
+                (escolha == true) ? $("#Rua").prop('disabled', true) : $("#Rua").prop('disabled', false);
+                (escolha == true) ? $("#Bairro").prop('disabled', true) : $("#Bairro").prop('disabled', false);
+                if (escolha == true) {
+                    $("#divCEP").css("display", "block");
+                    $('#Bairro').val("");
+                    $('#Rua').val("");
+                } else {
+                    $("#divCEP").css("display", "none");
+                    $("#CEP").val("");
+                    $('#Bairro').val("");
+                    $('#Rua').val("");
+                }
+            }
+
+            //### Configurações iniciais necessárias no carregamento da página
+            ($("#Telefone").val().length == 0) ? $("#Telefone").val("(__) ____-____") : validarTelefone("Telefone");
+            ($("#TelefoneRecado").val().length == 0) ? $("#TelefoneRecado").val("(__) ____-____") : validarTelefone("TelefoneRecado");
+
+            if ($("#Estado").val() == "")
+                $('#Cidade').prop("disabled", true);
+            else
+                $('#Cidade').prop("disabled", false);
+
+            if ($("#CEP").val() == "") {
+                var escolha = $("#EscolhaCEP").is(":checked");
+                $("#EscolhaCEP").prop("checked", false);
+                $("#Rua").prop('disabled', false);
+                $("#Bairro").prop('disabled', false);
+                $("#divCEP").css("display", "none");
+                $("#CEP").val("");               
+            }
+            else {
+                $("#EscolhaCEP").prop("checked", true);
+               
+            }
+           
+            //### Eventos
+            $("#Numero").keyup(function () {
+                $("#Numero").val($("#Numero").val().substring(0, 6));
+            });
+
+            $("#Telefone").blur(function () {
+                if ($("#Telefone").val().replace("_", "").replace(" ", "").replace("-", "").replace("(", "").replace(")", "").length == 0)
+                    return $("#Telefone").val("(__) ____-____");
+            });
+
+            $("#Telefone").keyup(function () {
+                validarTelefone("Telefone");
+            });
+
+            $("#TelefoneRecado").blur(function () {
+                if ($("#TelefoneRecado").val().replace("_", "").replace(" ", "").replace("-", "").replace("(", "").replace(")", "").length == 0)
+                    return $("#TelefoneRecado").val("(__) ____-____");
+            });
+
+            $("#TelefoneRecado").keyup(function () {
+                validarTelefone("TelefoneRecado");
+            });
+
+            $("#EscolhaCEP").click(function () {
+                configuraEscolhaCEP();
+            });
+
+            $("#CEP").keyup(function () {
+
+                var consultaCEP = $("#CEP").val($("#CEP").val().replace(/[^0-9]/g, "")).val();
+                $('#Bairro').val("");
+                $('#Rua').val("");
+
+                if (consultaCEP.length > 8) {
+                    console.log($("#CEP").val().length);
+                    consultaCEP = $("#CEP").val(consultaCEP.substring(0, 8));
+                    consultaCEP = $("#CEP").val();
+                }
+                console.log(consultaCEP.length);
+                if (consultaCEP.length == 8) {
+
+                    $.ajax({
+                        type: "GET",
+                        url: "https://localhost:44303/Contato/CarregarDadosCEP",
+                        dataType: 'Json',
+                        data: { "cep": consultaCEP },
+                        success: function (data) {
+                            var objetoRetorno = JSON.parse(JSON.stringify(data));
+
+                            if (objetoRetorno.erro != null) {
+                                $('#Bairro').val("");
+                                $('#Rua').val("");
+                                return alert("CEP não encontrado, digite outro CEP ou escolha a opção de não utilizar CEP e digite os dados dos campos 'Bairro' e 'Rua' manualmente.");
+                            }
+                            else
+                            {
+                                $('#Bairro').val(objetoRetorno.bairro);
+                                $('#Rua').val(objetoRetorno.logradouro);
+
+                            }
+                        },
+                        error: function (data) {
+                            alert("Erro ao tentar carregar lista de 'Bairros', entre em contato com o Administrador");
+                        }
+                    });
+                }
+            });
+
+            $("#Estado").change(function () {
+
+                var estado = $("#Estado").val();
+                if (estado == "") {
+                    $('#Cidade').prop("disabled", true);
+                    $('#Cidade').val($("select[name=cidade] option:first-child").val());
+                    return;
+                }
+
+                $.ajax({
+                    type: "GET",
+                    url: "https://localhost:44303/Contato/CarregarCidade",
+                    dataType: 'Json',
+                    data: { "estado": estado },
+
+                    success: function (data) {
+                        $('#Cidade').prop("disabled", false);
+                        $('#Bairro').prop("disabled", true);
+
+                        $('#Cidade option').remove();
+                        $('#Cidade').append($('<option>', {
+                            value: "",
+                            text: "- Escolha a Cidade-"
+                        }));
+
+                        for (var i = 0; data.length > i; i++) {
+
+                            $('#Cidade').append($('<option>', {
+                                value: data[i].nome,
+                                text: data[i].nome
+                            }));
+                        }
+                    },                    
+                    error: function (data) {
+                        alert("Ocorreu um erro ao tentar carregar a lista de 'Cidades', entre em contato com o Administrador");
+                    }
+                });
+            });
+        });
+
+        $('form').submit(function () {
+            //retirar máscaras
+            $("#Telefone").val($("#Telefone").val().replace(/[^0-9]/g, ""));
+            $("#TelefoneRecado").val($("#TelefoneRecado").val().replace(/[^0-9]/g, ""));
+
+            $(":disabled").prop('disabled', false)
+        });
+
+
+    </script>
+
+}

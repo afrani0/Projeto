@@ -1,0 +1,96 @@
+
+.pages-arquivo-linkVoltar{
+    text-decoration: none;
+    color: rgba(39, 63, 197, 0.644);
+    border: rgba(39, 63, 197, 0.644) solid 1px;
+    padding: 8px 15px 8px 15px;
+    font-size: 20px;
+    border-radius: 6px;
+    margin-left: 5px;
+    width: 100px;    
+}
+
+.pages-arquivo-button button:hover,a:hover{
+    color: #fff;
+    border: #3169d1 solid 1px;
+    background-color: #3169d1;
+}
+
+
+.pages-arquivo-button{
+    margin-top : 10px;      
+}
+
+.pages-arquivos-coluna-imagemdiv{
+    border: rgba(0, 26, 255, 0.411) solid 2px;
+    border-radius: 6px;
+    padding: 10px;
+    height: 180px;    
+    display: block;
+}
+/* aplicaria somente na primeira div da conjunto de divs com mesmo nome 'class'
+.pages-arquivos-coluna-imagemdiv:nth-of-type(1){
+    height: 210px;  
+}*/
+
+.pages-arquivos-coluna-imagemdiv button{
+    /*float: right;*/
+    color: #3169d1;
+    padding: 10px;
+    border-radius: 6px;
+    border: rgba(0, 26, 255, 0.411) 2px solid;
+    margin-left: 20px;
+    
+}
+
+.pages-arquivos-coluna-imagemdiv button:hover{
+    border: #3169d1 3px solid;
+}
+
+.pages-arquivo-registro{
+    width: 100%;
+    color : #3169d1;
+    border-radius: 6px;
+    border: rgba(0, 26, 255, 0.411) 5px solid;
+    margin-left: 20px;
+    padding: 25px;
+    margin-top: -20px;
+   
+    float: right;
+}
+
+form input{
+    height: 40px;
+}
+
+form span{
+    color: red;
+}
+
+.pages-arquivos-body{
+    margin: 20px 15%  0 15%;
+    font-size: 13px; 
+ }
+
+ .pages-arquivos-coluna-img{
+     max-width: 120px;
+     max-height: 120px;
+     margin-bottom:-18px ;
+     display: block;
+ }
+
+
+ .pages-arquivos-coluna-imagem{
+    width: 85%;
+ }
+
+ .pages-arquivos-previsualizacao-imagem{   
+     height: 70px;     
+ }
+
+ .pages-arquivos-coluna-img-posicionamento{
+     display: flex;
+     align-items: flex-end;
+     margin-top: 20px;
+ }
+

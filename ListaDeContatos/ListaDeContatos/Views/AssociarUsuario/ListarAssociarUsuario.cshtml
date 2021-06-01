@@ -1,0 +1,93 @@
+﻿@model IEnumerable<ListaDeContatos.ViewModels.UsuarioNivelAcessoViewModel>
+
+@{
+    ViewData["Title"] = "Associar Usuário";
+}
+<div class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header alert-info">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Atenção!</h4>
+            </div>
+            <div class="modal-body">
+                <p>O usuário será excluído permanentemente junto com sua permissão. Deseja mesmo excluir?</p>
+            </div>
+            <div class="modal-footer">
+                <form id="idFormDelete" action="/AssociarUsuario/DeletarAssociarUsuario" method="post">
+                   
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" id="id" name="id" value="" />
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<h2>Associar Usuário</h2>
+
+
+<form>
+    <label>Pesquisar Login</label>
+    <input name="login" type="text" value="" />
+    <button asp-action="PesquisarLogin" type="submit">Pesquisar</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeNivelAcesso)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeNivelAcesso)
+                </td>
+                <td>
+                    @Html.ActionLink("", "EditarAssociarUsuario", new { id = item.UserId }, new { @class = "btn panel-info glyphicon glyphicon-pencil", title = "Editar" }) |
+                    @Html.ActionLink("", "DeletarAssociarUsuario", new { id = item.UserId }, new { @class = "btn btn-info excluir glyphicon glyphicon-trash", id = item.UserId, title = "Excluir" })
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $(function () {
+                $(".excluir").click(function (e) {
+                    
+                    e.preventDefault()
+                    var id = $(this).attr("id");
+
+                    $("#idFormDelete input#id").val(id)
+                    $(".modal").modal();                    
+                });
+            })
+
+            var interval;
+            function fecharAlertas() {
+
+                $(".alerta").slideToggle(1000);
+                clearInterval(interval);
+            }
+            var interval = setInterval(fecharAlertas, 20000);
+        });
+    </script>
+}
+

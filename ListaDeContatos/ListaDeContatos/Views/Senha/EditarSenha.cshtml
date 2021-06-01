@@ -1,0 +1,38 @@
+﻿@model ListaDeContatos.ViewModels.SenhaViewModel
+
+@{
+    ViewData["Title"] = "Gerar Nova Senha";
+}
+
+<h2>Gerar Nova Senha</h2>
+
+<h4>Selecione o Login, clique em gerar nova senha, anote a senha gerada e mande para o usuário referente a esse Login</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditarSenha">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div  class="row">
+                <div class="form-group col-md-8">
+                    <label asp-for="UsuarioId">Login</label>
+                    @Html.DropDownList("UsuarioId", new SelectList(ViewBag.ListaUsuarios, "Id", "UserName"), "- Selecione um Login -", new { @class = "form-control" })
+                    <span asp-validation-for="UsuarioId" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="UsuarioId">&nbsp;</label>
+                    
+                    <input type="submit" value="Gerar Nova Senha" class="btn btn-info" />
+                   
+                </div>
+
+            </div>
+
+            @if (!string.IsNullOrEmpty(@Model.UsuarioId))
+            {
+                <label id="Senha">Anote a Senha Gerada</label><br />
+                <labe>@ViewBag.Senha</labe>
+            }
+        </form>
+    </div>
+</div>
+

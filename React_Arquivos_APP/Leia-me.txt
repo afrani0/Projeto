@@ -1,0 +1,21 @@
+Criado programa front-end react
+
+
+---Tela para controle de imagens---
+
+-tela de Listagem de Imagens, com busca por parâmetro nome da imagem
+-tela de criação de imagem e seus dados.
+-tela de edição da imagem com seus dados.
+
+O que o programa usa/tem:
+
+- react.js
+- html5, css3, javascript
+
+
+O que não usa/tem:
+
+- Jquery
+- Criptografia
+- Token
+- Bootstrap
